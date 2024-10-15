@@ -1,6 +1,8 @@
 package com.pluralsight;
 
+import java.io.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -53,7 +55,6 @@ public class FinancialTracker {
 
     public static void loadTransactions(String fileName) {
 
-
         // This method should load transactions from a file with the given file name.
         // If the file does not exist, it should be created.
         // The transactions should be stored in the `transactions` ArrayList.
@@ -62,7 +63,40 @@ public class FinancialTracker {
         // For example: 2023-04-15|10:13:25|ergonomic keyboard|Amazon|-89.50
         // After reading all the transactions, the file should be closed.
         // If any errors occur, an appropriate error message should be displayed.
+
+
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+            String input;
+            while ((input = bufferedReader.readLine()) != null) {
+                String[] parts = input.split("\\|");
+                LocalDate date = LocalDate.parse(parts[0]);
+                LocalTime time = LocalTime.parse(parts[1]);
+                String description = parts[2];
+                String vendor = parts[3];
+                double price = Double.parseDouble(parts[4]);
+
+                transactions.add(new Transaction(date, time, description, vendor, price));
+
+            }
+            bufferedReader.close();
+        } catch (Exception e) {
+            try {
+                System.err.println("Related file does not exist.");
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+                bufferedWriter.close();
+            } catch (Exception ex) {
+                System.err.println("File could not created.");
+
+            }
+        }
+
+
     }
+
+
+
 
     private static void addDeposit(Scanner scanner) {
         // This method should prompt the user to enter the date, time, description, vendor, and amount of a deposit.
