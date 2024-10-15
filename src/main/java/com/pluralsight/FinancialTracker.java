@@ -107,9 +107,20 @@ public class FinancialTracker {
 
         DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
+        System.out.println("Please the date of the deposit according to format(yyyy-MM-dd)");
+        LocalDate date = LocalDate.parse(scanner.nextLine(), dateTime);
 
+        System.out.println("Please enter the time of the deposit according to format(HH:mm:ss)");
+        LocalTime time = LocalTime.parse(scanner.nextLine(), dateTime);
 
+        System.out.println("Please enter the description of the deposit");
+        String description = scanner.nextLine();
 
+        System.out.println("Please enter the vendor of the deposit");
+        String vendor = scanner.nextLine();
+
+        System.out.println("Please enter the amount of the deposit");
+        double amount = scanner.nextDouble();   
 
 
     }
