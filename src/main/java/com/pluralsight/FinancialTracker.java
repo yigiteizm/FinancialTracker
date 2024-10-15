@@ -113,14 +113,19 @@ public class FinancialTracker {
         System.out.println("Please enter the time of the deposit according to format(HH:mm:ss)");
         LocalTime time = LocalTime.parse(scanner.nextLine(), dateTime);
 
-        System.out.println("Please enter the description of the deposit");
+        System.out.println("Please enter the description of the deposit:");
         String description = scanner.nextLine();
 
-        System.out.println("Please enter the vendor of the deposit");
+        System.out.println("Please enter the vendor of the deposit:");
         String vendor = scanner.nextLine();
 
-        System.out.println("Please enter the amount of the deposit");
-        double amount = scanner.nextDouble();   
+        System.out.println("Please enter the amount of the deposit:");
+        double amount = scanner.nextDouble();
+
+        if (amount <= 0 ){
+            System.out.println("Invalid input:Deposit amount must be greater than zero. ");
+            return;
+        }
 
 
     }
