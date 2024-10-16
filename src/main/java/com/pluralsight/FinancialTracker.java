@@ -65,7 +65,6 @@ public class FinancialTracker {
         // If any errors occur, an appropriate error message should be displayed.
 
 
-
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
             String input;
@@ -96,8 +95,6 @@ public class FinancialTracker {
     }
 
 
-
-
     private static void addDeposit(Scanner scanner) {
         // This method should prompt the user to enter the date, time, description, vendor, and amount of a deposit.
         // The user should enter the date and time in the following format: yyyy-MM-dd HH:mm:ss
@@ -121,19 +118,21 @@ public class FinancialTracker {
         System.out.println("Please enter the amount of the deposit:");
         double amount = scanner.nextDouble();
 
-        if (amount <= 0 ){
+        if (amount <= 0) {
             System.out.println("Invalid input:Deposit amount must be greater than zero. ");
             return;
         }
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true));
-            bufferedWriter.newLine();
-            bufferedWriter.write(transactions.toString());
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
-            bufferedWriter.close();
+            Transaction transaction = new Transaction(date, time, description, vendor, amount);
+            transactions.add(transaction);
+
+            bufferedWriter.newLine();
+            bufferedWriter.write(transaction.toString());
+
             System.out.println("Thank you for deposit of $" + amount);
         } catch (Exception e) {
-            System.out.println("Your transaction has not been added to file.");
+            System.out.println("An error occurred while processing the transaction: ");
         }
 
 
@@ -145,6 +144,8 @@ public class FinancialTracker {
         // The amount received should be a positive number than transformed to a negative number.
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new payment should be added to the `transactions` ArrayList.
+
+
     }
 
     private static void ledgerMenu(Scanner scanner) {
