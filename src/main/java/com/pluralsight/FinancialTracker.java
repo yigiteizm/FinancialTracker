@@ -103,10 +103,10 @@ public class FinancialTracker {
         // The new deposit should be added to the `transactions` ArrayList.
 
 
-        System.out.println("Please the date of the deposit according to format(yyyy-MM-dd)");
+        System.out.println("Please enter the date of the deposit according to format(yyyy-MM-dd):");
         LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
 
-        System.out.println("Please enter the time of the deposit according to format(HH:mm:ss)");
+        System.out.println("Please enter the time of the deposit according to format(HH:mm:ss):");
         LocalTime time = LocalTime.parse(scanner.nextLine(), TIME_FORMATTER);
 
         System.out.println("Please enter the description of the deposit:");
@@ -144,6 +144,31 @@ public class FinancialTracker {
         // The amount received should be a positive number than transformed to a negative number.
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new payment should be added to the `transactions` ArrayList.
+
+        System.out.println("Please enter the date of the payment according to format(yyyy-MM-dd):");
+        LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
+
+        System.out.println("Please enter the time of the payment according to format(HH:mm:ss):");
+        LocalTime time = LocalTime.parse(scanner.nextLine(), TIME_FORMATTER);
+
+        System.out.println("Please enter the description of the payment:");
+        String description = scanner.nextLine();
+
+        System.out.println("Please enter the vendor of the payment:");
+        String vendor = scanner.nextLine();
+
+        System.out.println("Please enter the amount of the payment:");
+        double amount = scanner.nextDouble();
+
+
+
+
+
+
+
+
+
+
 
 
     }
