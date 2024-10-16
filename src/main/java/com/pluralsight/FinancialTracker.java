@@ -160,18 +160,27 @@ public class FinancialTracker {
         System.out.println("Please enter the amount of the payment:");
         double amount = scanner.nextDouble();
 
+        if (amount <= 0) {
+            System.out.println("In order to make a payment, the amount must be positive. Please try again.");
+            return;
+        }
+        double negativeAmount = amount * -1;
 
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
+            Transaction transaction = new Transaction(date, time, description, vendor, amount);
+            transactions.add(transaction);
 
+            bufferedWriter.newLine();
+            bufferedWriter.write(transaction.toString());
 
-
-
-
-
-
-
+            System.out.println("Thank you for deposit of $" + amount);
+        } catch (Exception e) {
+            System.out.println("An error occurred while processing the transaction: ");
+        }
 
     }
+
 
     private static void ledgerMenu(Scanner scanner) {
         boolean running = true;
@@ -209,8 +218,12 @@ public class FinancialTracker {
     }
 
     private static void displayLedger() {
+
         // This method should display a table of all transactions in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
+
+
+
     }
 
     private static void displayDeposits() {
