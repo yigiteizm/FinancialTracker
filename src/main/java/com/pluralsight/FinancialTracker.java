@@ -105,13 +105,12 @@ public class FinancialTracker {
         // After validating the input, a new `Transaction` object should be created with the entered values.
         // The new deposit should be added to the `transactions` ArrayList.
 
-        DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         System.out.println("Please the date of the deposit according to format(yyyy-MM-dd)");
-        LocalDate date = LocalDate.parse(scanner.nextLine(), dateTime);
+        LocalDate date = LocalDate.parse(scanner.nextLine(), DATE_FORMATTER);
 
         System.out.println("Please enter the time of the deposit according to format(HH:mm:ss)");
-        LocalTime time = LocalTime.parse(scanner.nextLine(), dateTime);
+        LocalTime time = LocalTime.parse(scanner.nextLine(), TIME_FORMATTER);
 
         System.out.println("Please enter the description of the deposit:");
         String description = scanner.nextLine();
@@ -125,6 +124,16 @@ public class FinancialTracker {
         if (amount <= 0 ){
             System.out.println("Invalid input:Deposit amount must be greater than zero. ");
             return;
+        }
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true));
+            bufferedWriter.newLine();
+            bufferedWriter.write(transactions.toString());
+
+            bufferedWriter.close();
+            System.out.println("Thank you for deposit of $" + amount);
+        } catch (Exception e) {
+            System.out.println("Your transaction has not been added to file.");
         }
 
 
