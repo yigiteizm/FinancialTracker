@@ -122,13 +122,15 @@ public class FinancialTracker {
             System.out.println("Invalid input:Deposit amount must be greater than zero. ");
             return;
         }
+        Transaction transaction = new Transaction(date, time, description, vendor, amount);
+        transactions.add(transaction);
+
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
-            Transaction transaction = new Transaction(date, time, description, vendor, amount);
-            transactions.add(transaction);
 
-            bufferedWriter.newLine();
+
             bufferedWriter.write(transaction.toString());
+            bufferedWriter.newLine();
 
             System.out.println("Thank you for deposit of $" + amount);
         } catch (Exception e) {
@@ -165,14 +167,13 @@ public class FinancialTracker {
             return;
         }
         double negativeAmount = amount * -1;
+        Transaction transaction = new Transaction(date, time, description, vendor, amount);
+        transactions.add(transaction);
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
-            Transaction transaction = new Transaction(date, time, description, vendor, amount);
-            transactions.add(transaction);
-
-            bufferedWriter.newLine();
             bufferedWriter.write(transaction.toString());
+            bufferedWriter.newLine();
 
             System.out.println("Thank you for deposit of $" + amount);
         } catch (Exception e) {
@@ -221,8 +222,12 @@ public class FinancialTracker {
 
         // This method should display a table of all transactions in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
+        System.out.println("Here your transaction summary:");
+        for (Transaction transaction : transactions) {
+            System.out.println("Transaction Date :"+ transaction.getDate() + "|" + "Transaction Time:" + transaction.getTime() + "|" + "Description:" + transaction.getDescription()
+            + "|" + "Vendor:" + transaction.getVendor() + "|" + "Amount:" + transaction.getAmount() );
 
-
+        }
 
     }
 
