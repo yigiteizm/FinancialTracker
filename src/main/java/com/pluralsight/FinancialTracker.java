@@ -64,7 +64,6 @@ public class FinancialTracker {
         // After reading all the transactions, the file should be closed.
         // If any errors occur, an appropriate error message should be displayed.
 
-
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
             String input;
@@ -79,7 +78,7 @@ public class FinancialTracker {
                 transactions.add(new Transaction(date, time, description, vendor, price));
 
             }
-            bufferedReader.close();
+
         } catch (Exception e) {
             try {
                 System.err.println("Related file does not exist.");
@@ -127,8 +126,6 @@ public class FinancialTracker {
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
-
-
             bufferedWriter.write(transaction.toString());
             bufferedWriter.newLine();
 
@@ -166,7 +163,7 @@ public class FinancialTracker {
             System.out.println("In order to make a payment, the amount must be positive. Please try again.");
             return;
         }
-        double negativeAmount = amount * -1;
+        amount = -Math.abs(amount);
         Transaction transaction = new Transaction(date, time, description, vendor, amount);
         transactions.add(transaction);
 
@@ -222,7 +219,7 @@ public class FinancialTracker {
 
         // This method should display a table of all transactions in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
-        System.out.println("Table of All Transactions");
+        System.out.println("list of your All Transactions");
         System.out.println("date | time | description | vendor | amount");
 
         for (Transaction transaction : transactions) {
@@ -234,11 +231,24 @@ public class FinancialTracker {
     private static void displayDeposits() {
         // This method should display a table of all deposits in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
+
+        System.out.println("List of your Deposit Transactions");
+        System.out.println("Date | Time | Description | Vendor | Amount");
+        for (Transaction listOfDeposit : transactions) {
+            if (listOfDeposit.getAmount()>0 ){
+                System.out.println(listOfDeposit.toString());
+            }
+
+        }
+
+
     }
 
     private static void displayPayments() {
         // This method should display a table of all payments in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
+
+
     }
 
     private static void reportsMenu(Scanner scanner) {
