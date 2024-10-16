@@ -222,11 +222,11 @@ public class FinancialTracker {
 
         // This method should display a table of all transactions in the `transactions` ArrayList.
         // The table should have columns for date, time, description, vendor, and amount.
-        System.out.println("Here your transaction summary:");
-        for (Transaction transaction : transactions) {
-            System.out.println("Transaction Date :"+ transaction.getDate() + "|" + "Transaction Time:" + transaction.getTime() + "|" + "Description:" + transaction.getDescription()
-            + "|" + "Vendor:" + transaction.getVendor() + "|" + "Amount:" + transaction.getAmount() );
+        System.out.println("Table of All Transactions");
+        System.out.println("date | time | description | vendor | amount");
 
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction.toString());
         }
 
     }
