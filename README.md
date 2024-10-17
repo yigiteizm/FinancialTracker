@@ -52,11 +52,19 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - IntelliJ IDEA.
 
 ## Demo
+Here are screenshots that show the main features of the application.
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
 
-![Application Screenshot](path/to/your/screenshot.png)
-
+- HomeScreen Feature's screenshot:
+![HomeScreenMenu.JPG](imgs%2FHomeScreenMenu.JPG)
+- Screenshot of addDeposit Feature's screenshot:
+![addDeposit Method.JPG](imgs%2FaddDeposit%20Method.JPG)
+- Screenshot of addPayment Feature's screenshot:
+![addPayment Method.JPG](imgs%2FaddPayment%20Method.JPG)
+- Ledger Menu Feature's screenshot:
+![LedgerMenu.JPG](imgs%2FLedgerMenu.JPG)
+- Search by Vendor Feature's screenshot:
+![searchByvendor.JPG](imgs%2FsearchByvendor.JPG)
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
