@@ -285,6 +285,7 @@ public class FinancialTracker {
                     LocalDate firstDayOfMonth = currentDay.with(TemporalAdjusters.firstDayOfMonth());
                     LocalDate lastDayOfMonth = currentDay;
                     filterTransactionsByDate(firstDayOfMonth,lastDayOfMonth);
+                    break;
 
                 case "2":
                     // Generate a report for all transactions within the previous month,
@@ -292,18 +293,34 @@ public class FinancialTracker {
                     LocalDate firstDayOfPreviousMonth = currentDay.minusMonths(1).with(TemporalAdjusters.firstDayOfMonth());
                     LocalDate lastDayOfPreviousMonth = currentDay.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
                     filterTransactionsByDate(firstDayOfPreviousMonth,lastDayOfPreviousMonth);
+                    break;
 
 
                 case "3":
                     // Generate a report for all transactions within the current year,
                     // including the date, time, description, vendor, and amount for each transaction.
+                    LocalDate startOfCurrentYear = currentDay.with(TemporalAdjusters.firstDayOfYear());
+                    filterTransactionsByDate(startOfCurrentYear, currentDay);
+                    break;
+
 
                 case "4":
                     // Generate a report for all transactions within the previous year,
                     // including the date, time, description, vendor, and amount for each transaction.
+                    LocalDate firstDayOfPreviousYear = currentDay.minusYears(1).with(TemporalAdjusters.firstDayOfYear());
+                    LocalDate lastDayOfPreviousYear = currentDay.minusYears(1).with(TemporalAdjusters.lastDayOfYear());
+                    filterTransactionsByDate(firstDayOfPreviousYear, lastDayOfPreviousYear);
+                    break;
+
+
                 case "5":
                     // Prompt the user to enter a vendor name, then generate a report for all transactions
                     // with that vendor, including the date, time, description, vendor, and amount for each transaction.
+
+                    System.out.println("Please Enter Name Of the Vendor: ");
+                    String nameOfVendor = scanner.nextLine();
+                    filterTransactionsByVendor(nameOfVendor);
+                    break;
 
 
                 case "0":
