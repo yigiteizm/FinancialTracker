@@ -1,12 +1,17 @@
-# Project Title
+# Financial Tracker Application Project
 
-## Description of the Project
+## Description of the Financial Tracker Application Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+Financial Tracker is a simple Java application that allows users to manage their payments and deposits.
+Users can enter details like date, time, description, vendor, and amount for each transaction:
 
-![Class Diagram](path/to/your/class_diagram.png)
+1. Add Deposits: Record incomes with the help of date, time, description, and vendor for the amount such that inflows are traced easily.
+2. Add Payments: Record expenses as negative transactions to make tracking of financial outlays easier.
+3. Transactions View: A ledger of all transactions for clear visibility to track financial history easily.
+4. Filter Transactions: Transactions can be filtered by date range or by vendor in order to analyze spending habits.
+5. Report Generation: Provide the generation of reports based on month-to-date transactions or spend by vendor for further analysis.
 
-## User Stories
+## User Stories of Financial Tracker Application Project
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 

@@ -8,7 +8,6 @@ import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static java.time.temporal.TemporalAdjuster.*;
 
 public class FinancialTracker {
