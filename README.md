@@ -70,17 +70,17 @@ Outline potential future enhancements or functionalities you might consider addi
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- [Java Programming Tutorial](https://www.w3schools.com/java)
+- [Year Up United](https://yearup.brightspace.com/d2l/home/8605)
+- [Java Code Library](https://www.baeldung.com/java-current-month-start-date#:~:text=Using%20the%20LocalDate%20Class,date%20with%20the%20day%20altered.)
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+- **Yigit DEMIRCI** - Project Developer.
+
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+- Thank you to [Raymond] for continuous support and guidance.
