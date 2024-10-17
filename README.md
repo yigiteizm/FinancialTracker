@@ -15,8 +15,20 @@ Users can enter details like date, time, description, vendor, and amount for eac
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a user, I want to receive error messages for invalid inputs, so that I can quickly resolve any issues.
+- As a user, I want to validate input for date and time fields, so that I can avoid errors when entering transactions.
+- As a user, I want the ability to add a new deposit, so that I can track my income effectively.
+- As a user, I want the ability to make a payment, so that I can manage my expenses accurately.
+- As a user, I want to see a notification for successful transaction entries, so that I can confirm my actions.
+- As a user, I want to display all deposits separately from payments in the ledger, so that I can easily differentiate between my income and expenses.
+- As a user, I want to view all transactions in a ledger, so that I can have a clear overview of my finances.
+- As a user, I want to filter transactions by date, so that I can analyze my spending over specific periods.
+- As a user, I want to generate reports for the current month, so that I can monitor my recent financial activity.
+- As a user, I want to access transaction details by vendor, so that I can evaluate my spending with specific vendors.
+- As a user, I want to have a consistent date format for all transactions, so that I can easily read and understand my records.
+- As a user, I want to export my transactions to a CSV file, so that I can perform further analysis externally.
+- As a user, I want to have the option to exit the application easily, so that I can leave whenever I choose.
+
 
 ## Setup
 
