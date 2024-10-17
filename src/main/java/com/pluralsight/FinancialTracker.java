@@ -4,8 +4,12 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static java.time.temporal.TemporalAdjuster.*;
 
 public class FinancialTracker {
 
@@ -271,13 +275,16 @@ public class FinancialTracker {
             System.out.println("0) Back");
 
             String input = scanner.nextLine().trim();
-
+            LocalDate currentDay = LocalDate.now();
             switch (input) {
                 case "1":
 
                     // Generate a report for all transactions within the current month,
                     // including the date, time, description, vendor, and amount for each transaction.
 
+                    LocalDate firstDayOfMonth = currentDay.with(TemporalAdjusters.firstDayOfMonth());
+                    LocalDate lastDayOfMonth = currentDay;
+                    filterTransactionsByDate(firstDayOfMonth,lastDayOfMonth);
 
                 case "2":
                     // Generate a report for all transactions within the previous month,
@@ -292,6 +299,8 @@ public class FinancialTracker {
                 case "5":
                     // Prompt the user to enter a vendor name, then generate a report for all transactions
                     // with that vendor, including the date, time, description, vendor, and amount for each transaction.
+
+
                 case "0":
                     running = false;
                 default:
