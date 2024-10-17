@@ -13,8 +13,6 @@ Users can enter details like date, time, description, vendor, and amount for eac
 
 ## User Stories of Financial Tracker Application Project
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
 - As a user, I want to receive error messages for invalid inputs, so that I can quickly resolve any issues.
 - As a user, I want to validate input for date and time fields, so that I can avoid errors when entering transactions.
 - As a user, I want the ability to add a new deposit, so that I can track my income effectively.
@@ -50,9 +48,8 @@ Follow these steps to get your application running within IntelliJ IDEA:
 5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
 
 ## Technologies Used
-
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java: Amazon Corretto version 17.0.12.
+- IntelliJ IDEA.
 
 ## Demo
 
@@ -64,8 +61,10 @@ Include screenshots or GIFs that show your application in action. Use tools like
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Additional feature to be developed:
+- A feature can be added to remind users of recurring payments in the upcoming months, so they don’t forget to make their payments on time.
+- Improvement of current functionalities:
+- We can improve the feature by allowing users to edit their added payments or deposits.
 
 ## Resources
 
