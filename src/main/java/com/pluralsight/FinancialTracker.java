@@ -80,18 +80,15 @@ public class FinancialTracker {
             }
 
         } catch (Exception e) {
-            try {
+
                 System.err.println("Related file does not exist.");
-                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
-                bufferedWriter.close();
-            } catch (Exception ex) {
-                System.err.println("File could not created.");
+                e.printStackTrace();
 
             }
         }
 
 
-    }
+
 
 
     private static void addDeposit(Scanner scanner) {
@@ -277,8 +274,11 @@ public class FinancialTracker {
 
             switch (input) {
                 case "1":
+
                     // Generate a report for all transactions within the current month,
                     // including the date, time, description, vendor, and amount for each transaction.
+
+
                 case "2":
                     // Generate a report for all transactions within the previous month,
                     // including the date, time, description, vendor, and amount for each transaction.
