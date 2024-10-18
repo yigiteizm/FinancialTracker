@@ -274,6 +274,7 @@ public class FinancialTracker {
             System.out.println("0) Back");
 
             String input = scanner.nextLine().trim();
+
             LocalDate currentDay = LocalDate.now();
             switch (input) {
                 case "1":
